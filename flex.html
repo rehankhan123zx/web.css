@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compact Flexbox Demo with Colors</title>
+    <style>
+        /* Main Styling & Container */
+        body { font-family: sans-serif; background-color: #f9f9f9; padding: 10px; }
+        
+        /* Base styles for all three demonstration boxes */
+        .demo-box {
+            display: flex;
+            margin-bottom: 20px; /* Space between boxes */
+            padding: 8px; /* Compact padding */
+            border: 1px solid #ddd;
+            min-height: 50px; /* Minimum height for visibility */
+        }
+
+        /* Styling for the small items inside the boxes */
+        .item {
+            padding: 6px 10px; /* Compact item padding */
+            margin: 3px; /* Small margin */
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 0.9em;
+            color: #444; 
+        }
+        
+        h2 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+
+        /* --- 1. FLEX DIRECTION: ROW (Light Green Theme) --- */
+        .row-demo {
+            flex-direction: row; 
+            background-color: #e6ffe6; /* Lightest Green for the main box */
+            border-left: 5px solid #27ae60;
+        }
+        .row-demo .item {
+            background-color: #b3e6b3; /* Slightly darker Green for items */
+        }
+
+
+        /* --- 2. JUSTIFY CONTENT (Light Blue Theme) --- */
+        .justify-demo {
+            flex-direction: row;
+            background-color: #e0f7fa; /* Lightest Blue for the main box */
+             /* For space-between effect */
+            justify-content: space-between; 
+            border-left: 5px solid #2980b9;
+        }
+        .justify-demo .item {
+            background-color: #b2ebf2; /* Slightly darker Blue for items */
+        }
+
+
+        /* --- 3. ALIGN ITEMS (Light Orange/Yellow Theme) --- */
+        .align-demo {
+            flex-direction: row;
+            background-color: #fff8e1; /* Lightest Yellow for the main box */
+            height: 70px; /* Reduced Height to make it compact */
+            align-items: center; 
+            justify-content: flex-start;
+            border-left: 5px solid #e67e22;
+        }
+        .align-demo .item {
+             background-color: #ffe0b2; /* Light Orange for items */
+        }
+        /* Item 2 is still taller to show vertical center alignment */
+        .align-demo .item:nth-child(2) {
+            padding: 15px 10px; 
+            background-color: #ffcc80; 
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <h2> flex-direction row </h2>
+        <div class="demo-box row-demo">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+
+        <h2> justify-content </h2>
+        <div class="demo-box justify-demo">
+            <div class="item">Left End</div>
+            <div class="item">Center Item</div>
+            <div class="item">Right End</div>
+        </div>
+
+        <h2>align-items </h2>
+        <div class="demo-box align-demo">
+            <div class="item">Short Box</div>
+            <div class="item">Tall Box</div>
+            <div class="item">Standard Box</div>
+        </div>
+        
+    </div>
+
+</body>
+</html>
